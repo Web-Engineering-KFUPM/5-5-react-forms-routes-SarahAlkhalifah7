@@ -39,12 +39,14 @@
 //
 // 1) Import router primitives from react-router-dom
 //    HINT: import { Routes, Route, NavLink } from "react-router-dom";
-//
+import { Routes, Route, NavLink } from "react-router-dom";
+
 // 2) Import your three page components
 //    HINT: import Home from "./pages/Home";
 //          import About from "./pages/About";
 //          import Registration from "./pages/Registration";
 //
+  
 // 3) Add a simple navbar with NavLink items for "/", "/about", "/registration" inside the <div className="links">.
 //    HINT: <NavLink to="/" end className="navlink">PAGE_NAME</NavLink>
 //    / is only used for the home page, for other pages write their name in the to="" attribute, like /about.
@@ -59,6 +61,55 @@
 //
 // NOTE:
 // - Don’t change any CSS.
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Registration from "./pages/Registration";
+
+export default function App() {
+  return (
+    <div className="app">
+      <nav className="navbar">
+        <div className="brand">🧑‍💻 Student Portal</div>
+        <div className="links">
+          {/*Nav links*/}
+
+          {/* 3) Add NavLinks */}
+          <NavLink to="/" end className="navlink">
+            Home
+          </NavLink>
+
+          <NavLink to="/about" className="navlink">
+            About
+          </NavLink>
+
+          <NavLink to="/registration" className="navlink">
+            Registration
+          </NavLink>
+
+        </div>
+      </nav>
+
+      <main className="container">
+        {/*Routes*/}
+
+        {/* 4) Define Routes */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/registration" element={<Registration />} />
+
+          {/* 5) Catch-all 404 */}
+          <Route path="*" element={<h2>404 — Not Found</h2>} />
+        </Routes>
+
+      </main>
+
+      <footer className="footer">
+        <span>© {new Date().getFullYear()} React Student Portal</span>
+      </footer>
+    </div>
+  );
+}
 //
 // ================================================================
 // TODO #2: Use Registeration.jsx file.
