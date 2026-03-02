@@ -196,23 +196,3 @@ export default function App() {
 // ================================================================
 
 
-export default function App() {
-  return (
-    <div className="app">
-      <nav className="navbar">
-        <div className="brand">🧑‍💻 Student Portal</div>
-        <div className="links">
-          {/*Nav links*/}
-        </div>
-      </nav>
-
-      <main className="container">
-        {/*Routes*/}
-      </main>
-
-      <footer className="footer">
-        <span>© {new Date().getFullYear()} React Student Portal</span>
-      </footer>
-    </div>
-  );
-}
